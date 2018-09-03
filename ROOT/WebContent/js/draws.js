@@ -57,6 +57,7 @@ function set_simulation(nodes_length, svg_width, svg_height) {
   return ret;
 }
 
+
 function set_zoom(svg) {
 
   // add encompassing group for the zoom
@@ -446,3 +447,5 @@ function deleteEdge(id) {
 
   return deleted_edges;
 }
+
+

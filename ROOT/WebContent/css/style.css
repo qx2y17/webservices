@@ -3,6 +3,15 @@
 	styles for login.html
 */
 
+#suggest{
+    position:absolute;
+    background-color: #ffffff;
+    text-align: left;
+    border:1px solid #000;
+/*    display:none;*/
+}
+
+
 .input_text, .input_passwd {
   width: 100%;
   padding: 12px 20px;
@@ -128,10 +137,31 @@ hr {
 
 .btn-claim:hover {
   color: #fff;
-  border-color: 924dcc;
+  border-color: #924dcc;
   background-color: #a25ee5;
 }
+.btn-together {
+  border-color: #a85ae8;
+  background-color: #e1e100;
+  color: #fff;
+}
 
+.btn-together:hover {
+  color: #fff;
+  border-color: #924dcc;
+  background-color: #a25ee5;
+}
+.btn-conflict {
+  border-color: #a85ae8;
+  background-color: #ff8000;
+  color: #fff;
+}
+
+.btn-conflict:hover {
+  color: #fff;
+  border-color: #924dcc;
+  background-color: #a25ee5;
+}
 .info-node {
   fill: #5bc0de;
 }
@@ -150,6 +180,13 @@ hr {
 
 .pro-node {
   fill: #5cb85c;
+}
+
+.together-node {
+  fill: #e1e100;
+}
+.conflict-node {
+  fill: #ff8000;
 }
 
 .node-highlight {

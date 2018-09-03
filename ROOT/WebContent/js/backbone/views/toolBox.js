@@ -86,6 +86,8 @@ app.ToolBoxView = Backbone.View.extend({
     chart.simulation = restart_simulation(chart.simulation, restart);
   },
 
+  
+
   save: function() {
     $("#graph_info .modal-header span").text(chart.graphID);
 
@@ -130,6 +132,22 @@ app.ToolBoxView = Backbone.View.extend({
 
     $("#graph_info").modal('show');
   },
+
+/*addtogetherNode: function() {
+      var info = 2;
+      var con = 1;
+      add.node.(info){
+          
+           var attr = app.workBoxView.createNode(id);
+      }
+      add.node.(pro)
+  },
+
+
+*/
+
+
+
 
   analysisHistory: function() {
     var object = {

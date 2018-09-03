@@ -231,6 +231,7 @@ app.WorkBoxView = Backbone.View
       }
 
       // If a node is linked with another node which is a pro-node and starts with 'L'
+      
       var edges = chart.edges.filter(function(d) {
         return ((d.source.nodeID == id) && (d.target.type == "RA") && d.target.text.startsWith("L") && (d.target.text.length == 3));
       });

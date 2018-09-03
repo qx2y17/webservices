@@ -235,6 +235,8 @@ app.BrowseBoxView = Backbone.View.extend({
       $("#pref").hide();
       $("#con").hide();
       $("#pro").hide();
+      $("#together").hide();
+      $("#conflict").hide();
 
       $("#delete-node").addClass("disabled");
       $("#link-from").addClass("disabled");
@@ -251,6 +253,8 @@ app.BrowseBoxView = Backbone.View.extend({
       $("#pref").show();
       $("#con").show();
       $("#pro").show();
+      $("#together").show();
+      $("#conflict").show();
 
       $("#delete-node").removeClass("disabled");
       $("#link-from").removeClass("disabled");

@@ -166,8 +166,8 @@ public class VCServlet {
     
     /**
      * Fetch full data (metadata, nodes and edges) for the requested graphID
-     * @param graphID The graph
-     * @return A JSON formatted string e.g.
+     * @param gaphID The graph
+     * @return A JSON forrmatted string e.g.
      * {"timest": "2017-11-15 14:28:40.0",
         "isshared": "false",
         "nodes":
@@ -196,7 +196,9 @@ public class VCServlet {
             else return Response.status(Response.Status.NOT_FOUND).build();
         }
         else return Response.status(Response.Status.NOT_FOUND).build();
-    }//getAnalysis    
+    }//getAnalysis
+
+  
     
     @DELETE
     @Path("/analysis/{graphID}")
@@ -388,7 +390,33 @@ public class VCServlet {
 
         return out;
     }
-
+    @GET
+    @Path("/article/{keyword}")
+    //@JWTTokenNeeded
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getArticle(@PathParam("keyword") String keyword) {       
+        log.log(Level.INFO, "*** VERSION CONTROL SERVICE - GET ANALYSIS REQUEST");
+        if(keyword != null) {
+            //log.log(Level.INFO, "** keyword="+keyword);
+            DBQuery dbquery = new DBQuery();
+            String article = dbquery.getLikeArticel(keyword);
+            if(article != null)  return Response.ok().entity(article).build();
+            else return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        else return Response.status(Response.Status.NOT_FOUND).build();
+    } 
+    
+//    @JWTTokenNeeded
+//    @Path("/insertArticle")
+//    @POST
+//    @Produces(MediaType.APPLICATION_JSON)
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public String insertArticle(String strings){
+//         DBQuery dbquery = new DBQuery();
+//          String article = dbquery.insertArticle(strings);
+//
+//        return article;
+//    }
 
     /**
      * @param json the JSON for a node coming from the front-end upon the creation of a new node
