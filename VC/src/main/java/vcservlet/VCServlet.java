@@ -390,6 +390,7 @@ public class VCServlet {
 
         return out;
     }
+    
     @GET
     @Path("/article/{keyword}")
     //@JWTTokenNeeded
