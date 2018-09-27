@@ -364,7 +364,7 @@
             <!--
                     ************************************* Template for manipulating a modal for each node *************************************
             -->
-            <script type="text/template" id="node-template">
+             <script type="text/template" id="node-template">
                     <div class="modal-dialog">
                             <div class="modal-content">
                                     <div class="modal-header">
@@ -373,8 +373,9 @@
                                     <div class="modal-body">
                                             <div class="row row-text form-group">
                                                     <div class="col-md-2"><label>Text</label></div>
-                                                    <div class="col-md-10"><textarea id="textSearch"  class="form-control" rows="2" id="textSearch"  onchange="searchSuggest(this.value)"><%= text %></textarea>
-                                                    <div id="exDisplay" style="width:200px;height:100px;border:1px solid #000;display:none"></div>
+                                                    <div class="col-md-10">
+                                                    <textarea class="textSearch form-control"  style="width:400px" rows="2" onChange="searchSuggest(this.value)"><%= text %> </textarea>
+                                                   <div class="exDisplay" style="width:350px;height:100px;border:1px solid #000;"></div>
                                                     </div>
                                                  
                                             </div>
@@ -389,7 +390,7 @@
                                             </div>
                                     </div>
                                     <div class="modal-footer">
-                                            <button type="button" class="btn btn-default btn-update">Update</button>
+                                            <button type="button" id="update_btn" class="btn btn-default btn-update">Update</button>
                                             <button type="button" id="close_btn" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
                             </div>
