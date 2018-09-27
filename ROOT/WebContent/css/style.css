@@ -1,16 +1,14 @@
-@CHARSET "UTF-8";
-/**
-	styles for login.html
-*/
-
-#suggest{
-    position:absolute;
+exDisplay{
+   
     background-color: #ffffff;
     text-align: left;
     border:1px solid #000;
 /*    display:none;*/
 }
-
+.textSearch{
+    width:400px;
+    
+}
 
 .input_text, .input_passwd {
   width: 100%;
