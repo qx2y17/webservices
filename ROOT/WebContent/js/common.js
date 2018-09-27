@@ -160,54 +160,63 @@ function parseText(content, length) {
         return "";
     }
 }
+
+
 $(function(){
-    $("#exDisplay").empty();
-    $("#close_btn").click(function(){
-        $("#exDisplay").hide();
-    });
+    $("#exDisplay").empty()  
 })
+function hideTextDiv(){
+$("#close_btn").click(function(){
+        $(".exDisplay").hide();
+    });
+$("#update_btn").click(function(){
+        $(".exDisplay").hide();
+    });
+}
 function selectText(){
     
     $(".item").click(function(){
-        $("#textSearch").empty();
+        $("textarea").empty();
         var text=$(this).html();
-        $("#textSearch").val(text);
+        $("textarea").val(text);
     });
 }
-    function searchSuggest(text) {
-    //var ur1 = "Search";
-    $("#exDisplay").empty();
+ function searchSuggest(text) {  
+    $("this").next().empty();
     $.ajax({
         type: 'GET',
         url: remote_server + '/VC/rest/article/'+text+'',
         dataType:"json",
         async:false,
-
-        //Supply the JWT auth token
-        // headers: {"Authorization": localStorage.getItem('auth_token')},
         success: function (data) {
            
             console.log(data);
-  //  var datatext=JSON.stringify(data)
             var suggest = "";
-    
+   
             for(var ss in data){
           suggest += "<li class='item'>" +data[ss] + "</li>";
     }
     if (suggest!=="") {
-        $("#exDisplay").show();
-       // $("#exDispaly").html(suggest);
-       $("#exDisplay").html(suggest); 
-        selectText();
-    //});
-        //  alert(suggest);
-//$("#exDisplay").html("suggest");
-    //document.getElementById("exDisplay").innerHTML=suggest;
-    //$("#exDisplay").append(suggest);
-        //sobj.innerHTML = suggest;
-        //$("#suggest").show();
+       
+        $("textarea").next().show();
+       $("textarea").next().append(suggest);
+   
+
+   $(".item").click(function(){
+        $(".textSearch").empty();
+        var text=$(this).html();
+         $("textarea").val(text);
+    });
+       // hideTextDiv();  
+
+$("#close_btn").click(function(){
+        $("textarea").next().hide();
+    });
+$("#update_btn").click(function(){
+        $("textarea").next().hide();
+    });
     } else {
-        $("#exDisplay").hide();
+        $("textarea").next().hide();
     }
         },
         error: function (result) {
